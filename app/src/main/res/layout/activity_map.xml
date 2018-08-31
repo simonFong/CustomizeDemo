@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#666666">
+
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="@dimen/normal_24dp"
+            android:src="@mipmap/ic_location_02"
+            android:visibility="visible"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/normal_58dp"
+        android:paddingLeft="@dimen/normal_23dp"
+        android:paddingTop="@dimen/normal_58dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:textSize="@dimen/normal_28sp"
+            tools:text="东莞高盛大厦"/>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginTop="@dimen/normal_43dp"
+            android:textColor="#999999"
+            android:textSize="@dimen/normal_24sp"
+            tools:text="东莞市南城"/>
+
+        <ImageView
+            android:layout_width="@dimen/normal_60dp"
+            android:layout_height="@dimen/normal_60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/normal_23dp"
+            android:src="@mipmap/ic_location_03"/>
+
+        <TextView
+            android:id="@+id/daohang_tv"
+            android:layout_width="@dimen/normal_140dp"
+            android:layout_height="@dimen/normal_60dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/normal_110dp"
+            android:background="@drawable/shape_buttoon"
+            android:gravity="center"
+            android:text="立刻导航"
+            android:textColor="#7ecef4"
+            />
+    </RelativeLayout>
+</LinearLayout>

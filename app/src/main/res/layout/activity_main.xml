@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.dlc.zizhuyinliaoji.myapplication.MainActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/tv_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义dialog"/>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="login"/>
+
+            <Button
+                android:id="@+id/weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取天气"/>
+
+            <Button
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="地图"/>
+
+            <Button
+                android:id="@+id/pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="支付选项控件"/>
+
+            <Button
+                android:id="@+id/qr_scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫描二维码"/>
+
+            <Button
+                android:id="@+id/qr_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="生成二维码"/>
+
+            <Button
+                android:id="@+id/friend_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="朋友圈添加图片"/>
+
+            <Button
+                android:id="@+id/event_bus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eventbus使用"/>
+
+            <Button
+                android:id="@+id/super_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="圆和圆环"/>
+
+            <Button
+                android:id="@+id/mpAndroid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="柱形图和线性图"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AddPicView">
+        <attr name="max_num" format="integer"/>
+        <attr name="single_line_show_num" format="integer"/>
+        <attr name="show_delect_pic" format="boolean"/>
+    </declare-styleable>
+</resources>

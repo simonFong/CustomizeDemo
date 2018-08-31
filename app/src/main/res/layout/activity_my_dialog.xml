@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.dlc.zizhuyinliaoji.myapplication.dialogsum.MyDialogActivity">
+
+    <Button
+        android:id="@+id/btn_dialog1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="中间弹出dialog"/>
+
+    <Button
+        android:id="@+id/btn_dialog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="只带内容"/>
+
+    <Button
+        android:id="@+id/btn_dialog3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="标题和内容"/>
+
+    <Button
+        android:id="@+id/btn_dialog4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="标题、内容、两个按钮"/>
+
+
+</LinearLayout>

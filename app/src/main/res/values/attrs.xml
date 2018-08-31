@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <declare-styleable name="PayBar">
+        <attr name="icon" format="reference"/>
+        <attr name="name" format="string"/>
+        <attr name="name_size" format="dimension"/>
+        <attr name="name_color" format="color"/>
+        <attr name="select_bg" format="reference"/>
+        <attr name="common_type" format="enum">
+            <enum name="wechat" value="1"/>
+            <enum name="alipay" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>
