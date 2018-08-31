@@ -13,5 +13,6 @@ public class ChartActivity extends BaseCommonActivity {
         return R.layout.activity_chart;
 
 
+
     }
 }
