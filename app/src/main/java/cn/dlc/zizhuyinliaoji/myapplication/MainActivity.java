@@ -14,6 +14,7 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.dlc.zizhuyinliaoji.myapplication.MPAndroidChart.ChartActivity;
 import cn.dlc.zizhuyinliaoji.myapplication.addImage.EvaluateActivity;
 import cn.dlc.zizhuyinliaoji.myapplication.map.MapActivity;
 import cn.dlc.zizhuyinliaoji.myapplication.dialogsum.MyDialogActivity;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.mpAndroid:
-
+                startActivity(ChartActivity.class);
                 break;
         }
     }
