@@ -11,5 +11,7 @@ public class ChartActivity extends BaseCommonActivity {
     @Override
     protected int getLayoutID() {
         return R.layout.activity_chart;
+
+
     }
 }
