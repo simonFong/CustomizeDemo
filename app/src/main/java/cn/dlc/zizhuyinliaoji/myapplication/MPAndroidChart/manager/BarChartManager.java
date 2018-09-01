@@ -29,7 +29,7 @@ import cn.dlc.zizhuyinliaoji.myapplication.R;
 import static com.github.mikephil.charting.utils.ColorTemplate.rgb;
 
 /**
- * Created by lixukang   on  2018/5/14.
+ * Created by fengzimin   on  2018/5/14.
  */
 
 public class BarChartManager extends DemoBase implements OnChartValueSelectedListener {
@@ -116,7 +116,7 @@ public class BarChartManager extends DemoBase implements OnChartValueSelectedLis
      * @param range
      */
     public void showBarChart(int count, float range) {
-
+        //模拟数据
         final String[] mDate = new String[4];
         mDate[0] = "凌晨";
         mDate[1] = "6:00";
@@ -142,17 +142,19 @@ public class BarChartManager extends DemoBase implements OnChartValueSelectedLis
                 return mDate[(int) value % mDate.length];
             }
         });
-//        mLeftAxis.setValueFormatter(new IAxisValueFormatter() {
-//            @Override
-//            public String getFormattedValue(float value, AxisBase axis) {
-//                return null;
-//            }
-//        });
+        //        mLeftAxis.setValueFormatter(new IAxisValueFormatter() {
+        //            @Override
+        //            public String getFormattedValue(float value, AxisBase axis) {
+        //                return null;
+        //            }
+        //        });
 
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
         for (int i = 0; i < mScore.length; i++) {
             yVals1.add(new BarEntry(i, mScore[i]));
         }
+
+
         BarDataSet set1;
         if (mChart.getData() != null && mChart.getData().getDataSetCount() > 0) {
 

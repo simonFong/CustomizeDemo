@@ -29,10 +29,8 @@ import java.util.ArrayList;
 import cn.dlc.zizhuyinliaoji.myapplication.MPAndroidChart.MyMarkerView;
 import cn.dlc.zizhuyinliaoji.myapplication.R;
 
-import static com.github.mikephil.charting.utils.ColorTemplate.rgb;
-
 /**
- * Created by lixukang   on  2018/5/14.
+ * Created by fengzimin   on  2018/5/14.
  */
 
 public class LineChartManager implements OnChartValueSelectedListener, OnChartGestureListener {
@@ -157,9 +155,10 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
     }
 
 
-
     public void showLineChart(int count, float range) {
 
+
+        //模拟数据
         ArrayList<Entry> values = new ArrayList<Entry>();
 
         for (int i = 0; i < count; i++) {
@@ -169,6 +168,7 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
             values.add(new Entry(i, val, mContext.getResources().getDrawable(R.drawable.star)));
         }
 
+
         LineDataSet set1;
 
         if (mChart.getData() != null && mChart.getData().getDataSetCount() > 0) {
@@ -177,7 +177,6 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
             mChart.getData().notifyDataChanged();
             mChart.notifyDataSetChanged();
         } else {
-            // create a dataset and give it a type
             //标注内容
             set1 = new LineDataSet(values, "DataSet 1");
             //绘制数据点的图标
@@ -199,7 +198,7 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
             set1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
 
             if (Utils.getSDKInt() >= 18) {
-                // fill drawable only supported on api level 18 and above
+                //填充颜色
                 Drawable drawable = ContextCompat.getDrawable(mContext, R.drawable.fade_red);
                 set1.setFillDrawable(drawable);
             } else {
