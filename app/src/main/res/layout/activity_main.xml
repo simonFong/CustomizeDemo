@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.dlc.zizhuyinliaoji.myapplication.MainActivity">
+    tools:context="cn.dlc.customizedemo.myapplication.MainActivity">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -72,16 +72,16 @@
                 android:text="eventbus使用"/>
 
             <Button
-                android:id="@+id/super_circle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="圆和圆环"/>
-
-            <Button
                 android:id="@+id/mpAndroid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="柱形图和线性图"/>
+
+            <Button
+                android:id="@+id/leakcanary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="内存泄露leakcanary"/>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

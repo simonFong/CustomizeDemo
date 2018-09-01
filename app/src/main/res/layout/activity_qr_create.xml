@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.dlc.zizhuyinliaoji.myapplication.qr.QrCreateActivity">
+    tools:context="cn.dlc.customizedemo.myapplication.qr.QrCreateActivity">
 
     <EditText
         android:id="@+id/et_edit"

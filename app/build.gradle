@@ -90,4 +90,8 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.1.1'
     //图标
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    //leakcanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
 }

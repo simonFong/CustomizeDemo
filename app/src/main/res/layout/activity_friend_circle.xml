@@ -8,7 +8,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context="cn.dlc.zizhuyinliaoji.myapplication.addImage.EvaluateActivity">
+    tools:context="cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             android:layout_marginLeft="@dimen/normal_76dp"
             android:background="#e5e5e5"/>
 
-        <cn.dlc.zizhuyinliaoji.myapplication.addImage.ui.RatingBar
+        <cn.dlc.customizedemo.myapplication.addImage.ui.RatingBar
             android:id="@+id/pingjia_star"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -60,7 +60,7 @@
             app:stepSize="Half"/>
     </LinearLayout>
 
-    <cn.dlc.zizhuyinliaoji.myapplication.addImage.ui.AddPicView
+    <cn.dlc.customizedemo.myapplication.addImage.ui.AddPicView
         android:id="@+id/apv_select_pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

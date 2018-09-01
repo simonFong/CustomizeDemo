@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <cn.dlc.zizhuyinliaoji.myapplication.addImage.ui.MyImageView
+    <cn.dlc.customizedemo.myapplication.addImage.ui.MyImageView
         android:id="@+id/iv_pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/normal_20dp"
         tools:background="@mipmap/ic_launcher"/>
 
-    <cn.dlc.zizhuyinliaoji.myapplication.addImage.ui.MyImageView
+    <cn.dlc.customizedemo.myapplication.addImage.ui.MyImageView
         android:id="@+id/iv_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

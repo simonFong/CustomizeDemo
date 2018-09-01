@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.dlc.zizhuyinliaoji.myapplication.eventbus.activity.EventbusActivity">
+    tools:context="cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity">
 
     <net.lucode.hackware.magicindicator.MagicIndicator
         android:id="@+id/magic_indicator"

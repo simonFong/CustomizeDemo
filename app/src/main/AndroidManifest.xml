@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="cn.dlc.zizhuyinliaoji.myapplication">
+          package="cn.dlc.customizedemo.myapplication">
 
     <!-- 用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -30,7 +30,7 @@
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
 
     <application
-        android:name=".App"
+        android:name="cn.dlc.customizedemo.myapplication.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -38,18 +38,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name">
-        <activity android:name=".MainActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".dialogsum.MyDialogActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity">
         </activity>
-        <activity android:name=".weather.WeatherActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.weather.WeatherActivity">
         </activity>
-        <activity android:name=".map.MapActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.map.MapActivity">
         </activity>
 
         <meta-data
@@ -59,15 +59,15 @@
 
         <service android:name="com.amap.api.location.APSService"/>
 
-        <activity android:name=".pay.PayActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.pay.PayActivity">
         </activity>
-        <activity android:name=".qr.QrActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.qr.QrActivity">
         </activity>
-        <activity android:name=".qr.QrCreateActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.qr.QrCreateActivity">
         </activity>
-        <activity android:name=".addImage.EvaluateActivity">
+        <activity android:name="cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity">
         </activity>
-        <activity android:name=".addImage.viewpluimg.PlusImageActivity"/>
+        <activity android:name="cn.dlc.customizedemo.myapplication.addImage.viewpluimg.PlusImageActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -79,8 +79,9 @@
                 android:resource="@xml/filepaths"/>
         </provider>
 
-        <activity android:name=".eventbus.activity.EventbusActivity"/>
-        <activity android:name=".MPAndroidChart.ChartActivity"/>
+        <activity android:name="cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity"/>
+        <activity android:name="cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity"/>
+        <activity android:name="cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity"/>
     </application>
 
 </manifest>

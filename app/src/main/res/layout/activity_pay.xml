@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <cn.dlc.zizhuyinliaoji.myapplication.pay.ui.PayBar
+    <cn.dlc.customizedemo.myapplication.pay.ui.PayBar
         android:id="@+id/paybar_wechat"
         android:layout_width="match_parent"
         android:layout_height="@dimen/normal_130dp"
@@ -17,7 +17,7 @@
         android:layout_height="@dimen/normal_1dp"
         android:background="#dddddd"/>
 
-    <cn.dlc.zizhuyinliaoji.myapplication.pay.ui.PayBar
+    <cn.dlc.customizedemo.myapplication.pay.ui.PayBar
         android:id="@+id/paybar_alipay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/normal_130dp"
@@ -29,7 +29,7 @@
         android:layout_height="@dimen/normal_1dp"
         android:background="#dddddd"/>
 
-    <cn.dlc.zizhuyinliaoji.myapplication.pay.ui.PayBar
+    <cn.dlc.customizedemo.myapplication.pay.ui.PayBar
         android:id="@+id/paybar_card"
         android:layout_width="match_parent"
         app:name_color="@android:color/holo_red_dark"
