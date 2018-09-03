@@ -14,6 +14,7 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.dlc.customizedemo.myapplication.ConstraintLayoutBehavior.ConstraintLayoutBehaviorActivity;
 import cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity;
 import cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity;
 import cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R
-            .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary})
+            .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_dialog:
@@ -87,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.leakcanary:
                 startActivity(LeakcanaryActivity.class);
+                break;
+            case R.id.ConstraintLayout_behavior:
+                startActivity(ConstraintLayoutBehaviorActivity.class);
                 break;
         }
     }

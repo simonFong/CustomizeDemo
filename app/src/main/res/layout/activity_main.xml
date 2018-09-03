@@ -83,6 +83,12 @@
                 android:layout_height="wrap_content"
                 android:text="内存泄露leakcanary"/>
 
+            <Button
+                android:id="@+id/ConstraintLayout_behavior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ConstraintLayout_behavior"/>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

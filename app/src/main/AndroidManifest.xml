@@ -82,6 +82,7 @@
         <activity android:name="cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity"/>
         <activity android:name="cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity"/>
         <activity android:name="cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity"/>
+        <activity android:name=".ConstraintLayoutBehavior.ConstraintLayoutBehaviorActivity"/>
     </application>
 
 </manifest>
