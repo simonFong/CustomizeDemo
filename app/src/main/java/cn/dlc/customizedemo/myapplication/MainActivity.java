@@ -17,6 +17,7 @@ import butterknife.OnClick;
 import cn.dlc.customizedemo.myapplication.ConstraintLayoutBehavior.ConstraintLayoutBehaviorActivity;
 import cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity;
 import cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity;
+import cn.dlc.customizedemo.myapplication.conversation.ConversationActivity;
 import cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity;
 import cn.dlc.customizedemo.myapplication.map.MapActivity;
 import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
@@ -41,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R
-            .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior})
+            .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior,
+            R.id.conversation})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_dialog:
@@ -91,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.ConstraintLayout_behavior:
                 startActivity(ConstraintLayoutBehaviorActivity.class);
+                break;
+            case R.id.conversation:
+                startActivity(ConversationActivity.class);
                 break;
         }
     }
