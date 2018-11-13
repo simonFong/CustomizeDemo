@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R
             .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior,
-            R.id.conversation})
+            R.id.conversation, R.id.arcface})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_dialog:
@@ -95,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(ConstraintLayoutBehaviorActivity.class);
                 break;
             case R.id.conversation:
+                startActivity(ConversationActivity.class);
+                break;
+            case R.id.arcface:
                 startActivity(ConversationActivity.class);
                 break;
         }

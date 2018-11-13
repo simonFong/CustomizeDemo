@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
@@ -17,6 +18,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.ChartTouchListener;
@@ -37,6 +39,7 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
 
     private LineChart mChart;
     private Context mContext;
+    private XAxis mXAxis;
 
     public LineChartManager(LineChart chart, Context context) {
         mContext = context;
@@ -89,10 +92,10 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
         llXAxis.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
         llXAxis.setTextSize(10f);
 
-        XAxis xAxis = mChart.getXAxis();
+        mXAxis = mChart.getXAxis();
         //设置网格线和样式
-        xAxis.setDrawGridLines(false);
-        xAxis.enableGridDashedLine(10f, 10f, 0f);
+        mXAxis.setDrawGridLines(false);
+        mXAxis.enableGridDashedLine(10f, 10f, 0f);
         //        xAxis.setValueFormatter(new MyCustomXAxisValueFormatter());
         //        xAxis.addLimitLine(llXAxis); // add x-axis limit line
 
@@ -160,14 +163,37 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
 
         //模拟数据
         ArrayList<Entry> values = new ArrayList<Entry>();
-
+        final String[] mDate = new String[count];
         for (int i = 0; i < count; i++) {
 
             float val = (float) (Math.random() * range) + 3;
             //添加数据
             values.add(new Entry(i, val, mContext.getResources().getDrawable(R.drawable.star)));
+            mDate[i] = "rri" + i;
         }
 
+        mXAxis.setLabelCount(count - 1);
+        //        mXAxis.setValueFormatter(new IndexAxisValueFormatter(mDate));
+
+        //设置横坐标值
+        mXAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                if (mDate.length == 1) {
+                    if (value == mXAxis.mEntries[1]) {
+                        return "只有一个数据";
+                    } else {
+                        return "";
+                    }
+                }
+                if (mDate.length == 2) {
+                    if (value == mXAxis.mEntries[1]) {
+                        return "";
+                    }
+                }
+                return "123";
+            }
+        });
 
         LineDataSet set1;
 

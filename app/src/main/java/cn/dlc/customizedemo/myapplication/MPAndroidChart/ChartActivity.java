@@ -43,6 +43,6 @@ public class ChartActivity extends BaseCommonActivity {
 
     private void initLineChart() {
         LineChartManager lineChartManager = new LineChartManager(mLineChart, this);
-        lineChartManager.showLineChart(45, 100);
+        lineChartManager.showLineChart(6 , 100);
     }
 }

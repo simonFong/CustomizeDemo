@@ -84,6 +84,7 @@
         <activity android:name="cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity"/>
         <activity android:name=".ConstraintLayoutBehavior.ConstraintLayoutBehaviorActivity"/>
         <activity android:name=".conversation.ConversationActivity"/>
+        <activity android:name=".arcface.ArcFaceActivity"/>
     </application>
 
 </manifest>

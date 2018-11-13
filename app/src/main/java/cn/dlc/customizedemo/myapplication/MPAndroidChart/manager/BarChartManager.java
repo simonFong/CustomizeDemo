@@ -128,10 +128,15 @@ public class BarChartManager implements OnChartValueSelectedListener {
         mScore[2] = 200f;
         mScore[3] = 300f;
 
+
         //设置横坐标值
         mXAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
+
+                int length = mXAxis.mEntries.length;
+
+
                 if (mDate.length == 0) {
                     return "";
                 }

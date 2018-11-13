@@ -95,6 +95,12 @@
                 android:layout_height="wrap_content"
                 android:text="conversation"/>
 
+            <Button
+                android:id="@+id/arcface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="arcface"/>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
