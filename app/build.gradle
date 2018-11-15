@@ -42,6 +42,12 @@ configurations.all {
     }
 }
 
+repositories {
+    flatDir {
+        dirs "libs"//找到libs的aar
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.0.2'
@@ -53,7 +59,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // 添加公共库依赖
-    implementation 'cn.dlc.android:common-library:1.0.19'
+//    implementation 'cn.dlc.android:common-library:1.0.19'
+    compile(name: 'common-library-1.0.27', ext: 'aar')
     // 第三方依赖
     implementation 'com.android.support:recyclerview-v7:27.0.2'
     // 黄油刀
@@ -88,7 +95,7 @@ dependencies {
 //    compile 'com.lzy.widget:imagepicker:0.6.1'
     implementation project(':imagepicker')
     //上部切换tab
-    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
     //eventbus
     compile 'org.greenrobot:eventbus:3.1.1'
     //图标
@@ -98,4 +105,8 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //下拉刷新
     implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    //动态权限
+//    implementation 'cn.dlc.android:DLCPermission:1.0.0'
+    compile(name: 'DLCPermission-1.0.5', ext: 'aar')
+
 }

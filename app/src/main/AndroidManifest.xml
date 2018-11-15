@@ -28,6 +28,11 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <!-- 获取通讯录 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
 
     <application
         android:name="cn.dlc.customizedemo.myapplication.App"
@@ -85,6 +90,7 @@
         <activity android:name=".ConstraintLayoutBehavior.ConstraintLayoutBehaviorActivity"/>
         <activity android:name=".conversation.ConversationActivity"/>
         <activity android:name=".arcface.ArcFaceActivity"/>
+        <activity android:name=".Addressbook.AddressbookActivity"/>
     </application>
 
 </manifest>

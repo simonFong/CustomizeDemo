@@ -14,18 +14,19 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.dlc.customizedemo.myapplication.ConstraintLayoutBehavior.ConstraintLayoutBehaviorActivity;
+import cn.dlc.customizedemo.myapplication.Addressbook.AddressbookActivity;
 import cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity;
 import cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity;
+import cn.dlc.customizedemo.myapplication.arcface.ArcFaceActivity;
 import cn.dlc.customizedemo.myapplication.conversation.ConversationActivity;
+import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
+import cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity;
 import cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity;
 import cn.dlc.customizedemo.myapplication.map.MapActivity;
-import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
 import cn.dlc.customizedemo.myapplication.pay.PayActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrCreateActivity;
 import cn.dlc.customizedemo.myapplication.weather.WeatherActivity;
-import cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R
             .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior,
-            R.id.conversation, R.id.arcface})
+            R.id.conversation, R.id.arcface, R.id.address_book})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_dialog:
@@ -92,13 +93,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(LeakcanaryActivity.class);
                 break;
             case R.id.ConstraintLayout_behavior:
-                startActivity(ConstraintLayoutBehaviorActivity.class);
+                //                startActivity(ConstraintLayoutBehaviorActivity.class);
                 break;
             case R.id.conversation:
                 startActivity(ConversationActivity.class);
                 break;
             case R.id.arcface:
-                startActivity(ConversationActivity.class);
+                startActivity(ArcFaceActivity.class);
+                break;
+            case R.id.address_book:
+                startActivity(AddressbookActivity.class);
                 break;
         }
     }

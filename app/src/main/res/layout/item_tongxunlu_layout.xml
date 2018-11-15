@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_tongxunlu_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/normal_24dp">
+
+    <ImageView
+        android:id="@+id/item_tougxunlu_select_iv"
+        android:layout_width="@dimen/normal_32dp"
+        android:layout_height="@dimen/normal_32dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <ImageView
+        android:id="@+id/item_tongxunlu_touxiang_iv"
+        android:layout_width="@dimen/normal_76dp"
+        android:layout_height="@dimen/normal_76dp"
+        android:layout_marginLeft="@dimen/normal_28dp"/>
+
+    <TextView
+        android:id="@+id/item_tougxunlu_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normal_22dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxEms="6"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/normal_28sp"/>
+
+    <TextView
+        android:id="@+id/item_tongxunlu_juli_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normal_16dp"
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/normal_24sp"/>
+</LinearLayout>

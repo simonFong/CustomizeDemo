@@ -101,6 +101,12 @@
                 android:layout_height="wrap_content"
                 android:text="arcface"/>
 
+            <Button
+                android:id="@+id/address_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="通讯录"/>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
