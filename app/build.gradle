@@ -108,5 +108,7 @@ dependencies {
     //动态权限
 //    implementation 'cn.dlc.android:DLCPermission:1.0.0'
     compile(name: 'DLCPermission-1.0.5', ext: 'aar')
+    /*权限获取*/
+    compile 'com.yanzhenjie:permission:1.1.2'
 
 }

@@ -54,6 +54,7 @@
             tools:text="东莞市南城"/>
 
         <ImageView
+            android:id="@+id/iv_guide"
             android:layout_width="@dimen/normal_60dp"
             android:layout_height="@dimen/normal_60dp"
             android:layout_alignParentRight="true"

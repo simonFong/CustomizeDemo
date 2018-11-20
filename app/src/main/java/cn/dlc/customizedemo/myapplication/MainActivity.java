@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +23,7 @@ import cn.dlc.customizedemo.myapplication.conversation.ConversationActivity;
 import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
 import cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity;
 import cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity;
+import cn.dlc.customizedemo.myapplication.map.LocationManager;
 import cn.dlc.customizedemo.myapplication.map.MapActivity;
 import cn.dlc.customizedemo.myapplication.pay.PayActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrActivity;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Button mTvDialog;
     @BindView(R.id.btn_login)
     Button mBtnLogin;
+    private LocationManager mLocationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(WeatherActivity.class);
                 break;
             case R.id.map:
-                startActivity(MapActivity.class);
+                requestPermis();
                 break;
             case R.id.pay:
                 startActivity(PayActivity.class);
@@ -105,6 +108,36 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(AddressbookActivity.class);
                 break;
         }
+    }
+
+    //申请定位权限
+    private void requestPermis() {
+        mLocationManager = new LocationManager(this);
+        mLocationManager.setLocationCallBack(new LocationManager.LocationCallBack() {
+            @Override
+            public void locationSuccess(String city, String adCode, double latitude, double longitude) {
+                startActivity(MapActivity.class);
+            }
+
+            @Override
+            public void locationFailed(String tip) {
+                Toast.makeText(MainActivity.this, "定位失败，请检查是否打开了定位权限？", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mLocationManager != null && mLocationManager.isNoGas) {
+            requestPermis();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mLocationManager.stopLocation();
     }
 
     private void startActivity(Class clazz) {

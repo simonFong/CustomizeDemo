@@ -3,11 +3,11 @@ package cn.dlc.customizedemo.myapplication.Addressbook;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.dlc.dlcpermissionlibrary.PermissionCallback;
 import com.dlc.dlcpermissionlibrary.PermissionString;
 import com.dlc.dlcpermissionlibrary.PermissionUtil;
+import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +30,12 @@ import io.reactivex.schedulers.Schedulers;
  * interface by
  */
 public class AddressbookActivity extends BaseCommonActivity {
-    @BindView(R.id.recycler_view)
-    RecyclerView mRecyclerView;
     @BindView(R.id.sidebar)
     SideBar mSidebar;
+    @BindView(R.id.auto_rv)
+    AutoRecyclerView mAutoRv;
+    @BindView(R.id.refreshLayout)
+    TwinklingRefreshLayout mRefreshLayout;
     private TongxunluAdapter mTongxunluAdapter;
 
     @Override
@@ -54,6 +56,9 @@ public class AddressbookActivity extends BaseCommonActivity {
         requestPermission();
     }
 
+    /**
+     * 获取权限
+     */
     private void requestPermission() {
         PermissionUtil mPermissionUtil = PermissionUtil.getInstance(getApplicationContext());
         mPermissionUtil.requestPermissons(this, new String[]{
@@ -71,11 +76,15 @@ public class AddressbookActivity extends BaseCommonActivity {
     }
 
     private void initRecycler() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mAutoRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mTongxunluAdapter = new TongxunluAdapter(this);
-        mRecyclerView.setAdapter(mTongxunluAdapter);
+        mAutoRv.setAdapter(mTongxunluAdapter);
+
     }
 
+    /**
+     * 获取手机通讯录
+     */
     private void initData() {
         Observable.create(new ObservableOnSubscribe<List<Contact>>() {
             @Override
