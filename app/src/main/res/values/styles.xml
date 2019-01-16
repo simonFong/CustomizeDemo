@@ -29,26 +29,73 @@
 
     <declare-styleable name="RatingBar">
         <!--尺寸值-->
-        <attr name="starImageSize" format="dimension" />
+        <attr name="starImageSize" format="dimension"/>
         <!--星星间距-->
-        <attr name="starPadding" format="dimension" />
+        <attr name="starPadding" format="dimension"/>
         <!--星星总数-->
-        <attr name="starCount" format="integer" />
+        <attr name="starCount" format="integer"/>
         <!--空白的星星资源文件值-->
-        <attr name="starEmpty" format="reference" />
+        <attr name="starEmpty" format="reference"/>
         <!--满星资源文件值-->
-        <attr name="starFill" format="reference" />
+        <attr name="starFill" format="reference"/>
         <!--半星资源文件值-->
-        <attr name="starHalf" format="reference" />
+        <attr name="starHalf" format="reference"/>
         <!--是否可点击boolean值-->
-        <attr name="clickable" format="boolean" />
+        <attr name="clickable" format="boolean"/>
         <!--当前进度float值-->
-        <attr name="starStep" format="float" />
+        <attr name="starStep" format="float"/>
         <!--每次进度方式的值，整星还是半星-->
         <attr name="stepSize">
-            <enum name="Half" value="0" />
-            <enum name="Full" value="1" />
+            <enum name="Half" value="0"/>
+            <enum name="Full" value="1"/>
         </attr>
     </declare-styleable>
 
+    <style name="TitleBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/normal_88dp</item>
+        <item name="fitStatusBar">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="titleTextColor">@color/color_333</item>
+        <item name="android:textSize">@dimen/normal_36dp</item>
+        <item name="leftDrawable">@mipmap/back_black</item>
+        <item name="showLeftImage">true</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/normal_90dp</item>
+        <item name="android:background">@drawable/selector_bg_btn</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/normal_32dp</item>
+    </style>
+
+    <style name="WhiteButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/normal_90dp</item>
+        <item name="android:background">@drawable/selector_bg_btn_white</item>
+        <item name="android:textColor">@color/color_333</item>
+        <item name="android:textSize">@dimen/normal_32dp</item>
+    </style>
+
+    <style name="ItemButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_item_btn_bg</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/normal_26dp</item>
+        <item name="android:paddingTop">@dimen/normal_13dp</item>
+        <item name="android:paddingBottom">@dimen/normal_13dp</item>
+        <item name="android:paddingLeft">@dimen/normal_25dp</item>
+        <item name="android:paddingRight">@dimen/normal_25dp</item>
+    </style>
+
+    <!--空白数据布局参数-->
+    <style name="EmptyViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="empty_layout">@layout/include_common_empty</item>
+        <item name="image_view_id">@+id/iv_empty_icon</item>
+        <item name="text_view_id">@+id/tv_empty_text</item>
+    </style>
 </resources>

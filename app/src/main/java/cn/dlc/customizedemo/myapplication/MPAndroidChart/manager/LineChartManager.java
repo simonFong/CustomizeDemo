@@ -151,8 +151,7 @@ public class LineChartManager implements OnChartValueSelectedListener, OnChartGe
         //标注
         Legend l = mChart.getLegend();
         //标注类型
-        l.setForm(Legend.LegendForm.CIRCLE);
-
+        l.setForm(Legend.LegendForm.EMPTY);
         // // dont forget to refresh the drawing
         // mChart.invalidate();
     }

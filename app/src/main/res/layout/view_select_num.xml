@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/fl_less"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_bg_white"
+        android:padding="@dimen/normal_15dp">
+
+        <ImageView
+            android:id="@+id/iv_less"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_less_s"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="@dimen/normal_30dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/color_666"
+        android:textSize="@dimen/normal_17sp"/>
+
+    <FrameLayout
+        android:id="@+id/fl_add"
+        android:layout_width="wrap_content"
+        android:background="@drawable/selector_bg_white"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/normal_15dp">
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_add_s"/>
+    </FrameLayout>
+</LinearLayout>

@@ -17,8 +17,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.dlc.customizedemo.myapplication.Addressbook.AddressbookActivity;
 import cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity;
+import cn.dlc.customizedemo.myapplication.SearchHistory.SearchShopActivity;
+import cn.dlc.customizedemo.myapplication.SerialPort.SerialPortActivity;
 import cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity;
-import cn.dlc.customizedemo.myapplication.arcface.ArcFaceActivity;
+import cn.dlc.customizedemo.myapplication.baiduface.BaiduFaceActivity;
 import cn.dlc.customizedemo.myapplication.conversation.ConversationActivity;
 import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
 import cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity;
@@ -28,6 +30,7 @@ import cn.dlc.customizedemo.myapplication.map.MapActivity;
 import cn.dlc.customizedemo.myapplication.pay.PayActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrCreateActivity;
+import cn.dlc.customizedemo.myapplication.shopcar.ShopCarActivity;
 import cn.dlc.customizedemo.myapplication.weather.WeatherActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,11 +48,18 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+
     @OnClick({R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R
             .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior,
-            R.id.conversation, R.id.arcface, R.id.address_book})
+            R.id.conversation, R.id.arcface, R.id.address_book, R.id.serialPort, R.id.shopcar,R.id.search_history})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.search_history:
+                startActivity(SearchShopActivity.class);
+                break;
+            case R.id.shopcar:
+                startActivity(ShopCarActivity.class);
+                break;
             case R.id.tv_dialog:
                 startActivity(MyDialogActivity.class);
                 break;
@@ -102,10 +112,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(ConversationActivity.class);
                 break;
             case R.id.arcface:
-                startActivity(ArcFaceActivity.class);
+                startActivity(BaiduFaceActivity.class);
                 break;
             case R.id.address_book:
                 startActivity(AddressbookActivity.class);
+                break;
+            case R.id.serialPort:
+                startActivity(SerialPortActivity.class);
                 break;
         }
     }

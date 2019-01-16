@@ -107,6 +107,24 @@
                 android:layout_height="wrap_content"
                 android:text="通讯录"/>
 
+            <Button
+                android:id="@+id/serialPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SerialPort"/>
+
+            <Button
+                android:id="@+id/shopcar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="购物车"/>
+
+            <Button
+                android:id="@+id/search_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="关键字搜索"/>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

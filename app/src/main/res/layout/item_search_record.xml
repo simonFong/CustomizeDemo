@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_bg_solid_white_stroke_e5e5e5_width_1dp_r10"
+        android:paddingBottom="@dimen/normal_20dp"
+        android:paddingLeft="@dimen/normal_16dp"
+        android:paddingRight="@dimen/normal_16dp"
+        android:paddingTop="@dimen/normal_20dp"
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/normal_28sp"
+        tools:text="酸辣土豆丝"/>
+</LinearLayout>

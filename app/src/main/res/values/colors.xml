@@ -19,4 +19,14 @@
     <color name="color_fcfcfc">#fcfcfc</color>
     <color name="color_cbcbcb">#cbcbcb</color>
     <color name="color_background">#F5F5F5</color>
+
+    <color name="color_f0f0f0">#f0f0f0</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_169bd5">#169bd5</color>
+    <color name="color_181820">#181820</color>
+
+    <color name="color_25252a">#25252a</color>
+    <color name="color_1d1d25">#1d1d25</color>
+    <color name="color_565a66">#565a66</color>
+    <color name="color_1a1a20">#1a1a20</color>
 </resources>

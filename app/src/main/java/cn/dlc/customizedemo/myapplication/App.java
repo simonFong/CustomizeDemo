@@ -9,6 +9,7 @@ import com.squareup.leakcanary.RefWatcher;
 import cn.dlc.commonlibrary.utils.PrefUtil;
 import cn.dlc.commonlibrary.utils.ResUtil;
 import cn.dlc.commonlibrary.utils.ScreenUtil;
+import cn.dlc.customizedemo.myapplication.SearchHistory.SharedPreferencesUtil;
 
 /**
  * Created by fengzimin  on  2018/6/3.
@@ -25,7 +26,7 @@ public class App extends Application {
         ScreenUtil.init(this); // 获取屏幕尺寸
         ResUtil.init(this); // 资源
         PrefUtil.init(this); // SharedPreference
-
+        SharedPreferencesUtil.getInstance(this, "sp_data");
         mRefWatcher = LeakCanary.install(this);
     }
 }
