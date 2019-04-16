@@ -18,6 +18,12 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/tv_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="demo"/>
+
+            <Button
                 android:id="@+id/tv_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,6 +130,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="关键字搜索"/>
+
+            <Button
+                android:id="@+id/recyclerview_addItemDecoration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="recyclerview添加间距"/>
+
+            <Button
+                android:id="@+id/lazy_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lazyfragment"/>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

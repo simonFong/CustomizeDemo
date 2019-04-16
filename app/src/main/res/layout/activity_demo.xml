@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/radiogroup_info_id"
+            android:layout_width="228px"
+            android:layout_height="wrap_content"
+            android:text="我选择的是...?"
+            android:textSize="30sp"
+            />
+
+        <RadioGroup
+            android:id="@+id/radioGroup_sex_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <RadioButton
+                android:id="@+id/boy_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/selector_select_tick"
+                android:text="Boy"
+                />
+
+            <RadioButton
+                android:id="@+id/girl_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Girl"
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/radio_clear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="清除选中按钮"
+            />
+
+        <Button
+            android:id="@+id/radio_add_child"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="添加单选项"
+            />
+    </LinearLayout>
+</ScrollView>

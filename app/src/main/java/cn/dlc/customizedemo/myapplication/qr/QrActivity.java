@@ -70,6 +70,7 @@ public class QrActivity extends AppCompatActivity implements QRCodeView.Delegate
 
     }
 
+
     //扫描失败回调
     @Override
     public void onScanQRCodeOpenCameraError() {

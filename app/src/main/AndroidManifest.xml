@@ -94,6 +94,9 @@
         <activity android:name=".SerialPort.SerialPortActivity"/>
         <activity android:name=".shopcar.ShopCarActivity"/>
         <activity android:name=".SearchHistory.SearchShopActivity"/>
+        <activity android:name=".RecyclerviewAddItemDecoration.RecyclerviewAddItemDecoration"/>
+        <activity android:name=".LazyFragment.LazyActivity"/>
+        <activity android:name=".demo.DemoActivity"/>
     </application>
 
 </manifest>
