@@ -98,6 +98,8 @@
         <activity android:name=".LazyFragment.LazyActivity"/>
         <activity android:name=".demo.DemoActivity"/>
         <activity android:name=".camera.CameraActivity"/>
+        <activity android:name=".LinkedListActivity"/>
+        <activity android:name=".TaskAndTimeOut.TaskAndTimeOutActivity"/>
     </application>
 
 </manifest>

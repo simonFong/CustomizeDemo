@@ -18,6 +18,18 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/tv_task_and_timeout"
+                android:layout_width="match_parent"
+                android:text="task_and_timeout"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/tv_LinkedList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LinkedList-链表"/>
+
+            <Button
                 android:id="@+id/tv_camera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

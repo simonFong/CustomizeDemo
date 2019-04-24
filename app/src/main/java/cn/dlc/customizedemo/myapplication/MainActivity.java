@@ -21,6 +21,7 @@ import cn.dlc.customizedemo.myapplication.MPAndroidChart.ChartActivity;
 import cn.dlc.customizedemo.myapplication.RecyclerviewAddItemDecoration.RecyclerviewAddItemDecoration;
 import cn.dlc.customizedemo.myapplication.SearchHistory.SearchShopActivity;
 import cn.dlc.customizedemo.myapplication.SerialPort.SerialPortActivity;
+import cn.dlc.customizedemo.myapplication.TaskAndTimeOut.TaskAndTimeOutActivity;
 import cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity;
 import cn.dlc.customizedemo.myapplication.baiduface.BaiduFaceActivity;
 import cn.dlc.customizedemo.myapplication.camera.CameraActivity;
@@ -53,12 +54,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.tv_camera, R.id.tv_demo, R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R
-            .id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior,
-            R.id.conversation, R.id.arcface, R.id.address_book, R.id.serialPort, R.id.shopcar, R.id.search_history
-            , R.id.recyclerview_addItemDecoration, R.id.lazy_fragment})
+    @OnClick({R.id.tv_task_and_timeout, R.id.tv_LinkedList, R.id.tv_camera, R.id.tv_demo, R.id.tv_dialog, R.id.btn_login,
+            R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R.id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid,
+            R.id.leakcanary, R.id.ConstraintLayout_behavior, R.id.conversation, R.id.arcface, R.id.address_book,
+            R.id.serialPort, R.id.shopcar, R.id.search_history, R.id.recyclerview_addItemDecoration, R.id.lazy_fragment})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.tv_task_and_timeout:
+                startActivity(TaskAndTimeOutActivity.class);
+                break;
+            case R.id.tv_LinkedList:
+                startActivity(LinkedListActivity.class);
+                break;
             case R.id.tv_camera:
                 startActivity(CameraActivity.class);
                 break;
