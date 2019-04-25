@@ -194,7 +194,6 @@ public class BigDecimalUtil {
         if (bj > 0)
             return true;
         else
-
             return false;
     }
 }
