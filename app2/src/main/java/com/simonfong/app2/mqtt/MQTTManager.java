@@ -2,7 +2,6 @@ package com.simonfong.app2.mqtt;
 
 import android.content.Context;
 
-
 import com.licheedev.myutils.LogPlus;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -139,18 +138,19 @@ public class MQTTManager {
      * 发布和订阅消息的回调
      */
     public class PushCallback implements MqttCallback {
-
+        @Override
         public void connectionLost(Throwable cause) {
-                /*if (count<5) {
-                    count++;//5次重连
-                   LogPlus.e("断开连接，重新连接"+count+"次"+cause);
-                    try {
-                        client.close();
-                        connect();
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    }
-                }*/
+            if (count < 5) {
+                count++;//5次重连
+                LogPlus.e("断开连接，重新连接" + count + "次" + cause);
+                try {
+                    client.close();
+                    connect();
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+            LogPlus.e("断开连接" + cause.getMessage());
         }
 
         /**

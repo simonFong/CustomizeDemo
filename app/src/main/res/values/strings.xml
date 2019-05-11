@@ -38,4 +38,5 @@ Praesent tincidunt lorem sit amet mi consequat cursus. Interdum et malesuada fam
     <string name="user_face_registered">人脸已注册过了</string>
     <string name="activate_text">激活</string>
     <string name="allCancel">取消</string>
+    <string name="title_activity_kotlin2">Kotlin2Activity</string>
 </resources>

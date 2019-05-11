@@ -29,6 +29,7 @@ import cn.dlc.customizedemo.myapplication.conversation.ConversationActivity;
 import cn.dlc.customizedemo.myapplication.demo.DemoActivity;
 import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
 import cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity;
+import cn.dlc.customizedemo.myapplication.kotlin.Kotlin2Activity;
 import cn.dlc.customizedemo.myapplication.leakcanary.LeakcanaryActivity;
 import cn.dlc.customizedemo.myapplication.map.LocationManager;
 import cn.dlc.customizedemo.myapplication.map.MapActivity;
@@ -54,12 +55,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.tv_task_and_timeout, R.id.tv_LinkedList, R.id.tv_camera, R.id.tv_demo, R.id.tv_dialog, R.id.btn_login,
+    @OnClick({R.id.tv_kotlin, R.id.tv_task_and_timeout, R.id.tv_LinkedList, R.id.tv_camera, R.id.tv_demo, R.id.tv_dialog,
+            R.id.btn_login,
             R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R.id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid,
             R.id.leakcanary, R.id.ConstraintLayout_behavior, R.id.conversation, R.id.arcface, R.id.address_book,
             R.id.serialPort, R.id.shopcar, R.id.search_history, R.id.recyclerview_addItemDecoration, R.id.lazy_fragment})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.tv_kotlin:
+                startActivity(Kotlin2Activity.class);
+                break;
             case R.id.tv_task_and_timeout:
                 startActivity(TaskAndTimeOutActivity.class);
                 break;

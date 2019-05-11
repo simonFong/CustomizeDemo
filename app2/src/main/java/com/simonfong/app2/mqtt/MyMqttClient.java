@@ -32,7 +32,7 @@ public class MyMqttClient {
     /**
      * 订阅标识
      */
-    public static final String MQTT_TOPIC = "text";
+    public static final String MQTT_TOPIC = "text2";
 
     /**
      *
@@ -97,7 +97,11 @@ public class MyMqttClient {
 
                 @Override
                 public void onNext(Long aLong) {
-
+                    try {
+                        send();
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
@@ -123,7 +127,7 @@ public class MyMqttClient {
             message.setQos(1);
             message.setPayload("我是服务端".getBytes());
 
-            mqttClient.publish(MQTT_TOPIC, message);
+            mqttClient.publish("text", message);
 
         }
 

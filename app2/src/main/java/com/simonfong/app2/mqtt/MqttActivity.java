@@ -2,6 +2,7 @@ package com.simonfong.app2.mqtt;
 
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class MqttActivity extends BaseCommonActivity {
     @BindView(R.id.tv_text)
     TextView mTvText;
     private MQTTManager mManager;
+    private StringBuffer mStringBuffer;
 
     @Override
     protected int getLayoutID() {
@@ -32,12 +34,20 @@ public class MqttActivity extends BaseCommonActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mStringBuffer = new StringBuffer();
         mManager = MQTTManager.getInstance(this);
         mManager.connect();
         mManager.subscribeMsg("text", 0);
         mManager.setMessageHandlerCallBack((topicName, message) -> {
             Log.e(TAG, "MqttActivity:" + topicName + "----" + message);
-            showToast("MqttActivity:" + topicName + "----" + message);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    mStringBuffer.append(message + "\\n");
+                    mTvText.setText(Html.fromHtml(mStringBuffer.toString().replace("\\n","\n")));
+                }
+            });
         });
     }
 
@@ -47,7 +57,7 @@ public class MqttActivity extends BaseCommonActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_send:
-                mManager.publish("text", "我是客户端", false, 1);
+                mManager.publish("text2", "我是客户端", false, 1);
                 break;
         }
     }
