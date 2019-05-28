@@ -14,4 +14,16 @@
         android:layout_height="wrap_content"
         android:text="mqtt"/>
 
+    <Button
+        android:id="@+id/btn_exo_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="exoplayer"/>
+
+    <Button
+        android:id="@+id/demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="demo"/>
+
 </LinearLayout>

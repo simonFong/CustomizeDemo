@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.simonfong.app2.demo.DemoActivity;
+import com.simonfong.app2.exoplayer.ExoplayerActivity;
 import com.simonfong.app2.mqtt.MqttActivity;
 
 import butterknife.BindView;
@@ -24,11 +26,17 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_mqtt)
+    @OnClick({R.id.demo, R.id.btn_mqtt, R.id.btn_exo_player})
     public void onViewClicked(View v) {
         switch (v.getId()) {
+            case R.id.btn_exo_player:
+                startActivity(new Intent(MainActivity.this, ExoplayerActivity.class));
+                break;
             case R.id.btn_mqtt:
                 startActivity(new Intent(MainActivity.this, MqttActivity.class));
+                break;
+            case R.id.demo:
+                startActivity(new Intent(MainActivity.this, DemoActivity.class));
                 break;
         }
     }

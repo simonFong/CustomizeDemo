@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".mqtt.MqttActivity"/>
+        <activity android:name=".exoplayer.ExoplayerActivity"/>
+        <activity android:name=".demo.DemoActivity"/>
     </application>
 
 </manifest>
