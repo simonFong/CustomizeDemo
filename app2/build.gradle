@@ -3,11 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         applicationId "com.simonfong.app2"
-        minSdkVersion 22
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -66,5 +64,8 @@ dependencies {
     // LogPlus
     implementation 'com.github.licheedev.SomeLibrary:myutils:0.02'
 
+    //exoplayer播放器
     implementation 'com.google.android.exoplayer:exoplayer:2.8.4'
+    // 视频缓存
+    implementation 'com.danikula:videocache:2.7.0'
 }

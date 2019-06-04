@@ -21,6 +21,7 @@ import cn.dlc.commonlibrary.ui.base.BaseCommonActivity;
 public class DemoActivity extends BaseCommonActivity {
     @BindView(R.id.recycler)
     RecyclerView mRecycler;
+    private static int FLOWING_WATER;
 
     @Override
     protected int getLayoutID() {
@@ -40,5 +41,26 @@ public class DemoActivity extends BaseCommonActivity {
             objects.add(i + "");
         }
         simpleAdapter.setNewData(objects);
+
+        getOrder();
+    }
+
+
+    public void getOrder() {
+        //流水号
+        String flowingWater = getFlowingWater();
+        //亦或
+        String xorHex = HexTool.getInstance().getXOR("3BB304A1" + flowingWater + "0000");
+        String order = "3BB304A1" + flowingWater + "0000" + xorHex;
+        System.out.print(order);
+    }
+
+    public static String getFlowingWater() {
+        if (FLOWING_WATER >= 255) {
+            FLOWING_WATER = 1;
+        } else {
+            FLOWING_WATER++;
+        }
+        return ByteUtil.decimal2fitHex(FLOWING_WATER, 2);
     }
 }

@@ -2,18 +2,18 @@ package com.simonfong.app2.exoplayer;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 
+import com.danikula.videocache.HttpProxyCacheServer;
 import com.google.android.exoplayer2.ExoPlaybackException;
-import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.Timeline;
-import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
-import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.source.ConcatenatingMediaSource;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.TrackGroupArray;
@@ -31,10 +31,13 @@ import com.google.android.exoplayer2.util.Util;
 import com.licheedev.myutils.LogPlus;
 import com.simonfong.app2.R;
 
+import java.util.ArrayList;
 import java.util.Formatter;
+import java.util.List;
 import java.util.Locale;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.dlc.commonlibrary.ui.base.BaseCommonActivity;
 
 /**
@@ -46,7 +49,12 @@ public class ExoplayerActivity extends BaseCommonActivity {
 
     @BindView(R.id.exo_play)
     PlayerView mExoPlay;
+    @BindView(R.id.exo_play_2)
+    PlayerView mExoPlay2;
+    @BindView(R.id.btn_stop)
+    Button mBtnStop;
     private SimpleExoPlayer mSimpleExoPlayer;
+    private SimpleExoPlayerHelper mSimpleExoPlayerHelper1;
 
     @Override
     protected int getLayoutID() {
@@ -57,12 +65,33 @@ public class ExoplayerActivity extends BaseCommonActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initExo();
+        initExo2();
+    }
+
+    private void initExo2() {
+
+        List<String> strings = new ArrayList<>();
+//        strings.add("http://sdjsnmj.app.xiaozhuschool.com/public/uploads/imgs/20190424/6ab5a9bdf662862fcc26e00525 b9288d.mp4");
+        strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1556521397576.mp4");
+        strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/net1.mp3");
+        strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1556521318783.mp4");
+//        strings.add("http://sdjsnmj.app.xiaozhuschool.com/public/uploads/imgs/20190429/7a5a39ed74e4916e1bc6e8f2c927c1dc.mp4");
+        mSimpleExoPlayerHelper1 = SimpleExoPlayerHelper.createMySimpleExoPlayer(this, mExoPlay2)
+                .prepare(strings)
+                .setRepeatMode(SimpleExoPlayerHelper.RepeatMode.REPEAT_MODE_ONE)
+                .setPlayWhenReady(true);
+        mExoPlay.setUseController(true);
     }
 
     private void initExo() {
-        // step1. 创建一个默认的TrackSelector
-        Handler mainHandler = new Handler();
+        newSimpleExoPlayer();
 
+        mExoPlay.setUseController(true);
+        mExoPlay.setPlayer(mSimpleExoPlayer);
+        playVideo();
+    }
+
+    private void newSimpleExoPlayer() {
         // 创建带宽
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
 
@@ -74,33 +103,71 @@ public class ExoplayerActivity extends BaseCommonActivity {
 
         //step2. 创建播放器
         mSimpleExoPlayer = ExoPlayerFactory.newSimpleInstance(this, trackSelector);
-
-        mExoPlay.setPlayer(mSimpleExoPlayer);
-        playVideo();
+        //设置重复模式
+        mSimpleExoPlayer.setRepeatMode(Player.REPEAT_MODE_ALL);
     }
 
     private void playVideo() {
-        //测量播放过程中的带宽。 如果不需要，可以为null。
-        DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-        // 生成加载媒体数据的DataSource实例。
-        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this,
-                Util.getUserAgent(this, "useExoplayer"), bandwidthMeter);
-        // 生成用于解析媒体数据的Extractor实例。
-        ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
 
+        //        MediaSource mediaSource2 = newVideoSource("http://pzxtj.a.xiaozhuschool.com/statics/MP3/123.mp3");
+        //        MediaSource mediaSource2 = newVideoSource("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1
+        //        .mp3");
+        MediaSource mediaSource2 = buildMediaSource("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/net1.mp3");
+        //        MediaSource mediaSource2 = newVideoSource("https://d33av21req61rl.cloudfront
+        //        .net/track-files/34ef163a-2389-461f-9c99-07806befc439.mp3");
+        //        MediaSource mediaSource2 = newVideoSource("https://d33av21req61rl.cloudfront
+        //        .net/track-files/636febce-7840-4d3f-9486-049c10afeb48.mp3");
+        MediaSource mediaSource = buildMediaSource("http://sdjsnmj.app.xiaozhuschool" +
+                ".com/public/uploads/imgs/20190429/7a5a39ed74e4916e1bc6e8f2c927c1dc.mp4");
+        MediaSource mediaSource1 = buildMediaSource("http://sdjsnmj.app.xiaozhuschool" +
+                ".com/public/uploads/imgs/20190424/6ab5a9bdf662862fcc26e00525b9288d.mp4");
+        ConcatenatingMediaSource concatenatingMediaSource = new ConcatenatingMediaSource(mediaSource2, mediaSource, mediaSource1);
 
-        // MediaSource代表要播放的媒体。
-        MediaSource videoSource = new ExtractorMediaSource(Uri.parse("http://sdjsnmj.app.xiaozhuschool" +
-                ".com/public/uploads/imgs/20190429/7a5a39ed74e4916e1bc6e8f2c927c1dc.mp4"), dataSourceFactory, extractorsFactory,
-                null, null);
         //Prepare the player with the source.
-        mSimpleExoPlayer.prepare(videoSource);
+        mSimpleExoPlayer.prepare(concatenatingMediaSource);
         //添加监听的listener
         //        mSimpleExoPlayer.setVideoListener(mVideoListener);
         mSimpleExoPlayer.addListener(mListener);
         //        mSimpleExoPlayer.setTextOutput(mOutput);
         mSimpleExoPlayer.setPlayWhenReady(true);
 
+    }
+
+    private MediaSource buildMediaSource(String url) {
+        String proxyUrl = getProxyUrl(url);
+        return newVideoSource(proxyUrl);
+    }
+
+    /**
+     * 构造播放数据
+     *
+     * @param url
+     * @return
+     */
+    private MediaSource newVideoSource(String url) {
+        //测量播放过程中的带宽。 如果不需要，可以为null。
+        DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+        // 生成加载媒体数据的DataSource实例。
+        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this,
+                Util.getUserAgent(this, "useExoplayer"), bandwidthMeter);
+        // 生成用于解析媒体数据的Extractor实例。
+        ExtractorMediaSource.Factory factory = new ExtractorMediaSource.Factory(dataSourceFactory);
+        ExtractorMediaSource mediaSource = factory.createMediaSource(Uri.parse(url));
+        //        ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
+        //        return new ExtractorMediaSource(Uri.parse(url), dataSourceFactory, extractorsFactory, null,
+        //                null);
+        return mediaSource;
+    }
+
+    /**
+     * 获取带缓存的视频url
+     *
+     * @param originalUrl
+     * @return
+     */
+    private String getProxyUrl(String originalUrl) {
+        HttpProxyCacheServer proxy = VideoCacheProxy.getProxy(this);
+        return proxy.getProxyUrl(originalUrl);
     }
 
     Player.EventListener mListener = new Player.EventListener() {
@@ -123,26 +190,6 @@ public class ExoplayerActivity extends BaseCommonActivity {
         public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
             LogPlus.e("onPlayerStateChanged: playWhenReady = " + String.valueOf(playWhenReady)
                     + " playbackState = " + playbackState);
-            switch (playbackState) {
-                case ExoPlayer.STATE_ENDED:
-                    LogPlus.e("Playback ended!");
-                    //Stop playback and return to start position
-                    setPlayPause(false);
-                    mSimpleExoPlayer.seekTo(0);
-                    break;
-                case ExoPlayer.STATE_READY:
-                    LogPlus.e("ExoPlayer ready! pos: " + mSimpleExoPlayer.getCurrentPosition()
-                            + " max: " + stringForTime((int) mSimpleExoPlayer.getDuration()));
-                    setProgress(0);
-                    break;
-                case ExoPlayer.STATE_BUFFERING:
-                    LogPlus.e("Playback buffering!");
-                    break;
-                case ExoPlayer.STATE_IDLE:
-                    LogPlus.e("ExoPlayer idle!");
-                    break;
-            }
-
         }
 
         @Override
@@ -176,7 +223,7 @@ public class ExoplayerActivity extends BaseCommonActivity {
         }
     };
 
-    private void setPlayPause(boolean play){
+    private void setPlayPause(boolean play) {
         mSimpleExoPlayer.setPlayWhenReady(play);
     }
 
@@ -185,11 +232,11 @@ public class ExoplayerActivity extends BaseCommonActivity {
         Formatter mFormatter;
         mFormatBuilder = new StringBuilder();
         mFormatter = new Formatter(mFormatBuilder, Locale.getDefault());
-        int totalSeconds =  timeMs / 1000;
+        int totalSeconds = timeMs / 1000;
 
         int seconds = totalSeconds % 60;
         int minutes = (totalSeconds / 60) % 60;
-        int hours   = totalSeconds / 3600;
+        int hours = totalSeconds / 3600;
 
         mFormatBuilder.setLength(0);
         if (hours > 0) {
@@ -204,13 +251,30 @@ public class ExoplayerActivity extends BaseCommonActivity {
     protected void onPause() {
         LogPlus.e("MainActivity.onPause.");
         super.onPause();
-        mSimpleExoPlayer.stop();
+        if (mSimpleExoPlayerHelper1 != null) {
+            mSimpleExoPlayerHelper1.stop();
+        }
     }
 
     @Override
     protected void onStop() {
         LogPlus.e("MainActivity.onStop.");
         super.onStop();
-        mSimpleExoPlayer.release();
+        if (mSimpleExoPlayerHelper1 != null) {
+            mSimpleExoPlayerHelper1.release();
+        }
+    }
+
+    @OnClick({R.id.btn_stop, R.id.btn_start})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_start:
+                mSimpleExoPlayerHelper1.start();
+                break;
+            case R.id.btn_stop:
+                mSimpleExoPlayerHelper1.pause();
+                break;
+
+        }
     }
 }
