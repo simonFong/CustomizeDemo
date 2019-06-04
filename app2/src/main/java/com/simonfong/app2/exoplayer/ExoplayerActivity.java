@@ -69,17 +69,17 @@ public class ExoplayerActivity extends BaseCommonActivity {
     }
 
     private void initExo2() {
-
+        //播放的数据源
         List<String> strings = new ArrayList<>();
-//        strings.add("http://sdjsnmj.app.xiaozhuschool.com/public/uploads/imgs/20190424/6ab5a9bdf662862fcc26e00525 b9288d.mp4");
         strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1556521397576.mp4");
         strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/net1.mp3");
         strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1556521318783.mp4");
-//        strings.add("http://sdjsnmj.app.xiaozhuschool.com/public/uploads/imgs/20190429/7a5a39ed74e4916e1bc6e8f2c927c1dc.mp4");
+        //设置
         mSimpleExoPlayerHelper1 = SimpleExoPlayerHelper.createMySimpleExoPlayer(this, mExoPlay2)
                 .prepare(strings)
                 .setRepeatMode(SimpleExoPlayerHelper.RepeatMode.REPEAT_MODE_ONE)
                 .setPlayWhenReady(true);
+        //是否显示默认进度条
         mExoPlay.setUseController(true);
     }
 

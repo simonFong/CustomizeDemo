@@ -1,6 +1,8 @@
 package com.simonfong.app2;
 
+import android.provider.Settings;
 import android.support.multidex.MultiDexApplication;
+import android.text.TextUtils;
 
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.simonfong.app2.exoplayer.VideoCacheProxy;
@@ -12,6 +14,26 @@ import com.simonfong.app2.exoplayer.VideoCacheProxy;
  * @author fengzimin
  */
 public class App extends MultiDexApplication implements VideoCacheProxy.AppWrapper {
+
+    private static App mInstances;
+    private static String androidId;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstances = this;
+    }
+
+    public static App getInstances() {
+        return mInstances;
+    }
+
+    public static String getMacno() {
+        if (TextUtils.isEmpty(androidId)) {
+            androidId = Settings.System.getString(App.getInstances().getContentResolver(), Settings.System.ANDROID_ID);
+        }
+        return androidId;
+    }
 
     private HttpProxyCacheServer mProxy;
 

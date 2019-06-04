@@ -25,6 +25,10 @@
         <activity android:name=".mqtt.MqttActivity"/>
         <activity android:name=".exoplayer.ExoplayerActivity"/>
         <activity android:name=".demo.DemoActivity"/>
+
+        <service android:name=".mqtt.MyMqttService"/>
+        <!-- Mqtt Service -->
+        <service android:name="org.eclipse.paho.android.service.MqttService"/>
     </application>
 
 </manifest>
