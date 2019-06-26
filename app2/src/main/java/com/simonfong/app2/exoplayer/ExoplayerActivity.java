@@ -64,20 +64,22 @@ public class ExoplayerActivity extends BaseCommonActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initExo();
+//        initExo();
         initExo2();
     }
 
     private void initExo2() {
         //播放的数据源
         List<String> strings = new ArrayList<>();
-        strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1556521397576.mp4");
-        strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/net1.mp3");
-        strings.add("https://lixiang.https.xiaozhuschool.com/statics/images/shiping/1556521318783.mp4");
+        strings.add("http://zsxyylsb.app.xiaozhuschool.com/public/uploads/imgs/20190528/835ad2bb1f56f525311b980291805cff.mp3");
+        strings.add("http://zsxyylsb.app.xiaozhuschool.com/public/uploads/imgs/20190528/6c48ac8e73bba9e044bc5e57d5d5106d.mp4");
+        strings.add("http://zsxyylsb.app.xiaozhuschool.com/public/uploads/imgs/20190528/835ad2bb1f56f525311b980291805cff.mp3");
+        strings.add("http://zsxyylsb.app.xiaozhuschool.com/public/uploads/imgs/20190610/a3fb4373a929a880685b977ea404194b.mp3");
+        strings.add("http://zsxyylsb.app.xiaozhuschool.com/public/uploads/imgs/20190610/36a43a0cd8119f2da9c4f2ccd398816d.mp3");
         //设置
         mSimpleExoPlayerHelper1 = SimpleExoPlayerHelper.createMySimpleExoPlayer(this, mExoPlay2)
                 .prepare(strings)
-                .setRepeatMode(SimpleExoPlayerHelper.RepeatMode.REPEAT_MODE_ONE)
+                .setRepeatMode(SimpleExoPlayerHelper.RepeatMode.REPEAT_MODE_OFF)
                 .setPlayWhenReady(true);
         //是否显示默认进度条
         mExoPlay.setUseController(true);
