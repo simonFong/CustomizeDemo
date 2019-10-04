@@ -14,6 +14,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.licheedev.myutils.LogPlus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +48,13 @@ public class ShopCarGoodsAdapter extends BaseRecyclerAdapter<ShopCarGoodsBean> {
     public void setNewData(List<? extends ShopCarGoodsBean> data) {
         super.setNewData(data);
         setAllSelect(false);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        LogPlus.e("getItemViewType-----------"+position+"----------"+super.getItemViewType(position));
+        return super.getItemViewType(position);
+
     }
 
     @Override

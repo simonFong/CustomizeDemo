@@ -88,7 +88,7 @@
         <activity android:name=".baiduface.BaiduFaceActivity"/>
         <activity android:name=".Addressbook.AddressbookActivity"/>
         <activity android:name=".SerialPort.SerialPortActivity"/>
-        <activity android:name=".shopcar.ShopCarActivity"/>
+        <activity android:name=".shopcar.shopcar1.ShopCarActivity"/>
         <activity android:name=".SearchHistory.SearchShopActivity"/>
         <activity android:name=".RecyclerviewAddItemDecoration.RecyclerviewAddItemDecoration"/>
         <activity android:name=".LazyFragment.LazyActivity"/>
@@ -98,6 +98,8 @@
         <activity android:name=".TaskAndTimeOut.TaskAndTimeOutActivity"/>
         <activity android:name="com.simonfong.app2.mqtt.MqttActivity"/>
         <activity android:name=".kotlin.KotlinActivity"/>
+        <activity android:name=".shopcar.SelectShopCarActivity" />
+        <activity android:name=".shopcar.shopcar2.ShopCar2Activity" />
     </application>
 
 </manifest>

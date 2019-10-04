@@ -36,7 +36,7 @@ import cn.dlc.customizedemo.myapplication.map.MapActivity;
 import cn.dlc.customizedemo.myapplication.pay.PayActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrActivity;
 import cn.dlc.customizedemo.myapplication.qr.QrCreateActivity;
-import cn.dlc.customizedemo.myapplication.shopcar.ShopCarActivity;
+import cn.dlc.customizedemo.myapplication.shopcar.SelectShopCarActivity;
 import cn.dlc.customizedemo.myapplication.weather.WeatherActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(SearchShopActivity.class);
                 break;
             case R.id.shopcar:
-                startActivity(ShopCarActivity.class);
+                startActivity(SelectShopCarActivity.class);
                 break;
             case R.id.tv_dialog:
                 startActivity(MyDialogActivity.class);
