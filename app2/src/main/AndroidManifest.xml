@@ -25,6 +25,8 @@
         <activity android:name=".mqtt.MqttActivity"/>
         <activity android:name=".exoplayer.ExoplayerActivity"/>
         <activity android:name=".demo.DemoActivity"/>
+        <activity android:name=".picturechoose.PictureChooseActivity" />
+        <activity android:name=".drawerlayout.DrawerLayoutActivity" />
 
         <service android:name=".mqtt.MyMqttService"/>
         <!-- Mqtt Service -->

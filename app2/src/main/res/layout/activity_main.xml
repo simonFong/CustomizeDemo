@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,18 +11,30 @@
         android:id="@+id/btn_mqtt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="mqtt"/>
+        android:text="mqtt" />
 
     <Button
         android:id="@+id/btn_exo_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="exoplayer"/>
+        android:text="exoplayer" />
 
     <Button
         android:id="@+id/demo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="demo"/>
+        android:text="demo" />
+
+    <Button
+        android:id="@+id/picture_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择图片" />
+
+    <Button
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="drawerlayout" />
 
 </LinearLayout>
