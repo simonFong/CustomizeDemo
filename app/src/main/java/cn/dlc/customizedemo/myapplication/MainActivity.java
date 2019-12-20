@@ -26,7 +26,7 @@ import cn.dlc.customizedemo.myapplication.addImage.EvaluateActivity;
 import cn.dlc.customizedemo.myapplication.baiduface.BaiduFaceActivity;
 import cn.dlc.customizedemo.myapplication.camera.CameraActivity;
 import cn.dlc.customizedemo.myapplication.conversation.ConversationActivity;
-import cn.dlc.customizedemo.myapplication.demo.DemoActivity;
+import cn.dlc.customizedemo.myapplication.radio.RadioActivity;
 import cn.dlc.customizedemo.myapplication.dialogsum.MyDialogActivity;
 import cn.dlc.customizedemo.myapplication.eventbus.activity.EventbusActivity;
 import cn.dlc.customizedemo.myapplication.kotlin.Kotlin2Activity;
@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.tv_kotlin, R.id.tv_task_and_timeout, R.id.tv_LinkedList, R.id.tv_camera, R.id.tv_demo, R.id.tv_dialog,
-            R.id.btn_login,
-            R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R.id.qr_create, R.id.friend_circle, R.id.event_bus, R.id.mpAndroid,
-            R.id.leakcanary, R.id.ConstraintLayout_behavior, R.id.conversation, R.id.arcface, R.id.address_book,
-            R.id.serialPort, R.id.shopcar, R.id.search_history, R.id.recyclerview_addItemDecoration, R.id.lazy_fragment})
+    @OnClick({R.id.tv_kotlin, R.id.tv_task_and_timeout, R.id.tv_LinkedList, R.id.tv_camera, R.id.tv_radio,
+            R.id.tv_dialog, R.id.btn_login, R.id.weather, R.id.map, R.id.pay, R.id.qr_scan, R.id.qr_create,
+            R.id.friend_circle, R.id.event_bus, R.id.mpAndroid, R.id.leakcanary, R.id.ConstraintLayout_behavior,
+            R.id.conversation, R.id.arcface, R.id.address_book, R.id.serialPort, R.id.shopcar, R.id.search_history,
+            R.id.recyclerview_addItemDecoration, R.id.lazy_fragment})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_kotlin:
@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tv_camera:
                 startActivity(CameraActivity.class);
                 break;
-            case R.id.tv_demo:
-                startActivity(DemoActivity.class);
+            case R.id.tv_radio:
+                startActivity(RadioActivity.class);
                 break;
             case R.id.recyclerview_addItemDecoration:
                 startActivity(RecyclerviewAddItemDecoration.class);
@@ -102,11 +102,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.qr_scan:
                 if (Build.VERSION.SDK_INT > 22) {
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                            != PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                         //先判断有没有权限 ，没有就在这里进行权限的申请
-                        ActivityCompat.requestPermissions(this,
-                                new String[]{Manifest.permission.CAMERA}, 1);
+                        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
                     } else {
                         //说明已经获取到摄像头权限了 想干嘛干嘛
                         startActivity(QrActivity.class);
@@ -179,7 +177,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mLocationManager.stopLocation();
+        if (mLocationManager != null) {
+            mLocationManager.stopLocation();
+        }
     }
 
     private void startActivity(Class clazz) {

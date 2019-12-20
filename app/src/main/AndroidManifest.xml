@@ -92,7 +92,7 @@
         <activity android:name=".SearchHistory.SearchShopActivity"/>
         <activity android:name=".RecyclerviewAddItemDecoration.RecyclerviewAddItemDecoration"/>
         <activity android:name=".LazyFragment.LazyActivity"/>
-        <activity android:name=".demo.DemoActivity"/>
+        <activity android:name=".radio.RadioActivity"/>
         <activity android:name=".camera.CameraActivity"/>
         <activity android:name=".LinkedListActivity"/>
         <activity android:name=".TaskAndTimeOut.TaskAndTimeOutActivity"/>

@@ -32,6 +32,7 @@
         <activity android:name=".picturechoose.PictureChooseActivity" />
         <activity android:name=".drawerlayout.DrawerLayoutActivity" />
         <activity android:name=".permissions.PermissionsActivity" />
+        <activity android:name=".RadioGroup.RadioActivity" />
 
         <service android:name=".mqtt.MyMqttService"/>
         <!-- Mqtt Service -->
