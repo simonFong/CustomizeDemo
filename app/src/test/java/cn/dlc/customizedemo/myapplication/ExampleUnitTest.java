@@ -4,8 +4,11 @@ import org.junit.Test;
 
 import java.math.BigInteger;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 import cn.dlc.customizedemo.myapplication.SerialPort.ByteUtil;
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 
 import static org.junit.Assert.assertEquals;
 
@@ -96,5 +99,18 @@ public class ExampleUnitTest {
         return true;
     }
 
+    @Test
+    public void test(){
 
+        for(int i = 1; i < 1000; i++) {
+            int finalI = i;
+            Observable.interval(123*i, TimeUnit.MILLISECONDS).take(1).subscribe(new Consumer<Long>() {
+                @Override
+                public void accept(Long aLong) throws Exception {
+                    int exposure = finalI;
+                    System.out.print("exposure:"+exposure);
+                }
+            });
+        }
+    }
 }
