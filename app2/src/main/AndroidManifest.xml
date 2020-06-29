@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.simonfong.app2">
+    package="com.simonfong.app2">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
@@ -20,23 +27,31 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mqtt.MqttActivity"/>
-        <activity android:name=".exoplayer.ExoplayerActivity"/>
-        <activity android:name=".demo.DemoActivity"/>
+        <activity android:name=".mqtt.MqttActivity" />
+        <activity android:name=".exoplayer.ExoplayerActivity" />
+        <activity android:name=".demo.DemoActivity" />
         <activity android:name=".picturechoose.PictureChooseActivity" />
         <activity android:name=".drawerlayout.DrawerLayoutActivity" />
         <activity android:name=".permissions.PermissionsActivity" />
-        <activity android:name=".RadioGroup.RadioActivity" />
+        <activity android:name=".wifiserver.activity.FileSenderActivity" />
+        <activity android:name=".wifiserver.activity.MainActivity2" />
+        <activity android:name=".piechart.PieChartActivity" />
 
-        <service android:name=".mqtt.MyMqttService"/>
+        <service android:name=".mqtt.MyMqttService" />
         <!-- Mqtt Service -->
-        <service android:name="org.eclipse.paho.android.service.MqttService"/>
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+        <service
+            android:name=".wifiserver.service.FileSenderService"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name=".wifiserver.service.FileReceiverService" />
+
     </application>
 
 </manifest>

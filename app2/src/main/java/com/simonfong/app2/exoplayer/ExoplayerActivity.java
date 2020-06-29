@@ -251,7 +251,7 @@ public class ExoplayerActivity extends BaseCommonActivity {
 
     @Override
     protected void onPause() {
-        LogPlus.e("MainActivity.onPause.");
+        LogPlus.e("MainActivity2.onPause.");
         super.onPause();
         if (mSimpleExoPlayerHelper1 != null) {
             mSimpleExoPlayerHelper1.stop();
@@ -260,7 +260,7 @@ public class ExoplayerActivity extends BaseCommonActivity {
 
     @Override
     protected void onStop() {
-        LogPlus.e("MainActivity.onStop.");
+        LogPlus.e("MainActivity2.onStop.");
         super.onStop();
         if (mSimpleExoPlayerHelper1 != null) {
             mSimpleExoPlayerHelper1.release();

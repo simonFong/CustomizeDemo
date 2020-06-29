@@ -12,6 +12,8 @@ import com.simonfong.app2.exoplayer.ExoplayerActivity;
 import com.simonfong.app2.mqtt.MqttActivity;
 import com.simonfong.app2.permissions.PermissionsActivity;
 import com.simonfong.app2.picturechoose.PictureChooseActivity;
+import com.simonfong.app2.piechart.PieChartActivity;
+import com.simonfong.app2.wifiserver.activity.MainActivity2;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.demo, R.id.btn_mqtt, R.id.btn_exo_player, R.id.picture_choose, R.id.drawerlayout,R.id.permissions})
+    @OnClick({R.id.demo, R.id.btn_mqtt, R.id.btn_exo_player, R.id.picture_choose, R.id.drawerlayout, R.id.permissions
+            , R.id.filesender, R.id.piechart})
     public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.btn_exo_player:
@@ -49,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.permissions:
                 startActivity(new Intent(MainActivity.this, PermissionsActivity.class));
+                break;
+            case R.id.filesender:
+                startActivity(new Intent(MainActivity.this, MainActivity2.class));
+                break;
+            case R.id.piechart:
+                startActivity(new Intent(MainActivity.this, PieChartActivity.class));
                 break;
         }
     }

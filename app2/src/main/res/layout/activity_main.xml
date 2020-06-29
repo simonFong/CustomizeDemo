@@ -43,4 +43,16 @@
         android:layout_height="wrap_content"
         android:text="permissions" />
 
+    <Button
+        android:id="@+id/filesender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="filesender" />
+
+    <Button
+        android:id="@+id/piechart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="piechart" />
+
 </LinearLayout>
